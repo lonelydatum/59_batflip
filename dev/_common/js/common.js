@@ -56,7 +56,7 @@ function sliderVertical(){
 }
 
 function standard(frame1=sliderSlant){	
-	console.log(read.frame1[window.universalBanner.name]);
+	
 	const tl = init()	
 	tl.from(".proline1", {duration:.2, opacity:0}, "+=.2")
 	tl.to(".proline1", {duration:.2, opacity:0}, "+=.8")
