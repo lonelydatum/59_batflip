@@ -8,13 +8,13 @@ gsap.defaults({
 });
 
 const read = {
-	frame1: {
-		MARCH1: 1.6,
-		MARCH2: 2.2,
-	},
+	frame1:{},
 	frame2: 2.7, 
 	frame3: 3
 }
+
+read.frame1[`PP-Batflip`] = 1.2
+read.frame1[`MARCH2`] = 2.2
 
 const {w, h} = bannerSize
 
@@ -56,6 +56,7 @@ function sliderVertical(){
 }
 
 function standard(frame1=sliderSlant){	
+	console.log(read.frame1[window.universalBanner.name]);
 	const tl = init()	
 	tl.from(".proline1", {duration:.2, opacity:0}, "+=.2")
 	tl.to(".proline1", {duration:.2, opacity:0}, "+=.8")
@@ -64,6 +65,7 @@ function standard(frame1=sliderSlant){
 	tl.add(frame1())
 
 	tl.to([ ".bg", ".t1"], {duration:.2, opacity:0}, `+=${read.frame1[window.universalBanner.name]}`)
+
 
 	
 	if(universalBanner.size==="320x50"){
